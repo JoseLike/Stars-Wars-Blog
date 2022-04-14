@@ -3,15 +3,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			characters:[],
 			planets:[],
-			vehicles:[]
+			vehicles:[],
+			favourites:[]
 
 		},
 		actions: {
+
+			addToFavs:()=>{
+
+			},
 
 			getCharacters: async ()=>{
 				const response = await  fetch( "https://www.swapi.tech/api/people")
 				const data = await response.json()
 				setStore({characters: data.results})
+				console.log(characters)
 			},
 
 			getPlanets: async ()=>{
