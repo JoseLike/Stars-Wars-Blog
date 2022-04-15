@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import "../../styles/home.css";
 import { Context } from "../store/appContext";
 
@@ -22,10 +23,9 @@ export const Home = () => {
       <div className="row ms-10 d-flex flex-nowrap justify-content-md-center overflow-auto">
         {store.characters.map((character) => {
           return (
-            <div className="col-md-2">
               <div
                 key={character.uid}
-                className="card"
+                className="card m-4"
                 style={{ width: "18rem" }}
               >
                 <img className="card-img-top" src="" alt="Card image cap" />
@@ -35,17 +35,17 @@ export const Home = () => {
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
-                  <a href="#" className="btn btn-outline-primary">
+                  <Link to={"/single/" + character.uid}>
+                  <a className="btn btn-outline-primary">
                     Learn more!
                   </a>
+                  </Link>
                   <a
-                    href="#"
                     className="btn-outline-warning float-end m- border border-warning ps-1 rounded pe-1"
                   >
                     <i class="far fa-heart"></i>
                   </a>
                 </div>
-              </div>
             </div>
           );
         })}
@@ -56,8 +56,7 @@ export const Home = () => {
       <div className="row ms-10 d-flex flex-nowrap justify-content-md-center overflow-auto">
         {store.planets.map((planet) => {
           return (
-            <div className="col-2">
-            <div key={planet.uid} className="card" style={{ width: "18rem" }}>
+            <div key={planet.uid} className="card m-4" style={{ width: "18rem" }}>
               <img className="card-img-top" src="..." alt="Card image cap" />
               <div className="card-body">
                 <h5 className="card-title">{planet.name}</h5>
@@ -75,7 +74,6 @@ export const Home = () => {
                     <i class="far fa-heart"></i>
                   </a>
                 </div>
-              </div>
             </div>
           );
         })}
@@ -86,8 +84,7 @@ export const Home = () => {
       <div className="row ms-10 d-flex flex-nowrap justify-content-md-center overflow-auto">
         {store.vehicles.map((vehicle) => {
           return (
-            <div className="col-2">
-            <div key={vehicle.uid} className="card" style={{ width: "18rem" }}>
+            <div key={vehicle.uid} className="card m-4" style={{ width: "18rem" }}>
               <img className="card-img-top" src="..." alt="Card image cap" />
               <div className="card-body">
                 <h5 className="card-title">{vehicle.name}</h5>
@@ -106,7 +103,6 @@ export const Home = () => {
                   </a>
                 </div>
               </div>
-            </div>
           );
         })}
       </div>

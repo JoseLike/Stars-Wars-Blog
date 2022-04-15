@@ -2,22 +2,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			characters:[],
+			onecharacter:{},
 			planets:[],
 			vehicles:[],
 			favourites:[]
-
 		},
 		actions: {
 
 			addToFavs:()=>{
-
+				setStore({favourites: [... getStore({characters:characters.uid})]})
 			},
 
 			getCharacters: async ()=>{
 				const response = await  fetch( "https://www.swapi.tech/api/people")
 				const data = await response.json()
 				setStore({characters: data.results})
-				console.log(characters)
+				
 			},
 
 			getPlanets: async ()=>{
@@ -31,6 +31,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const gettedstarships = await response.json()
 				setStore({vehicles: gettedstarships.results})
 			},
+
+			getOneCharacter: async ()=>{
+				const response = await fetch("https://www.swapi.tech/api/people/1")
+				const gettedcharacter = await response.json(); 
+				setStore({onecharacter:gettedcharacter.result.properties})
+			}
 			
 		}
 	};
