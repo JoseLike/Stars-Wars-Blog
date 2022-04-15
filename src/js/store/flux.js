@@ -32,8 +32,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({vehicles: gettedstarships.results})
 			},
 
-			getOneCharacter: async ()=>{
-				const response = await fetch("https://www.swapi.tech/api/people/1")
+			getOneCharacter: async (key)=>{
+				const response = await fetch("https://www.swapi.tech/api/people/"+key)
 				const gettedcharacter = await response.json(); 
 				setStore({onecharacter:gettedcharacter.result.properties})
 			}
