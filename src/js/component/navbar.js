@@ -12,9 +12,9 @@ export const Navbar = () => {
           alt=""
         />
       </a>
-      <div class="dropdown show me-5">
+      <div className="dropdown show me-5">
 			<a
-			class="btn btn-primary dropdown-toggle"
+			className="btn btn-primary dropdown-toggle"
 			href="#"
 			role="button"
 			id="dropdownMenuLink"
@@ -24,14 +24,14 @@ export const Navbar = () => {
 			>
 			Favourites
 			</a>
-			<div class="dropdown-menu" aria-labelledby="dropdownFavourites">
-			<a class="dropdown-item" href="#">
+			<div className="dropdown-menu" aria-labelledby="dropdownFavourites">
+			<a className="dropdown-item" href="#">
 				Action
 			</a>
-			<a class="dropdown-item" href="#">
+			<a className="dropdown-item" href="#">
 				Another action
 			</a>
-			<a class="dropdown-item" href="#">
+			<a className="dropdown-item" href="#">
 				Something else here
 			</a>
         </div>
