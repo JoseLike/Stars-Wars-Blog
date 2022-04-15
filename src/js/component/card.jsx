@@ -24,6 +24,6 @@ export const Card = (props) => (
 Card.propTypes = {
 	name: PropTypes.string,
 	clave: PropTypes.string,
-	loadsingle: PropTypes.func
+	loadsingle: PropTypes.object
 	
 };
