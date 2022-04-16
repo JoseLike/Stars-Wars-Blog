@@ -21,17 +21,17 @@ export const Home = () => {
     <div>
       <div className="container mt-4">
       <h1 className="row">Characters</h1>
-      <div className="row ms-10 d-flex flex-nowrap justify-content-md-center overflow-auto">
+      <div className="row ms-10 d-flex flex-nowrap justify-content-start overflow-auto">
         {store.characters.map((character) => {
           return (
-            <Card key={character.uid} name={character.name} clave={"/single/" + character.uid} loadsingle={actions.getOneCharacter(character.uid)} />
+            <Card key={character.uid} name={character.name} clave={"/single/" + character.uid} loadsingle={character.uid} />
           );
         })}
       </div>
       </div>
       <div className="container">
       <h1 className="row mt-3">Planets</h1>
-      <div className="row ms-10 d-flex flex-nowrap justify-content-md-center overflow-auto">
+      <div className="row ms-10 d-flex flex-nowrap justify-content-start overflow-auto">
         {store.planets.map((planet) => {
           return (
             <Card key={planet.uid} name={planet.name} clave={"/single/" + planet.uid} />
@@ -41,7 +41,7 @@ export const Home = () => {
       </div>
       <div className="container">
       <h1 className="row mt-3">Vehicles</h1>
-      <div className="row ms-10 d-flex flex-nowrap justify-content-md-center overflow-auto">
+      <div className="row ms-10 d-flex flex-nowrap justify-content-start overflow-auto">
         {store.vehicles.map((vehicle) => {
           return (
             <Card key={vehicle.uid} name={vehicle.name} clave={"/single/" + vehicle.uid} />
