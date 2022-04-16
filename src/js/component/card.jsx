@@ -15,7 +15,7 @@ export const Card = (props) => {
 				</a>
 			</Link>
 			<a
-				className="btn-outline-warning float-end m- border border-warning ps-1 rounded pe-1"
+				className="btn-outline-warning float-end m- border border-warning ps-1 rounded pe-1" onClick={props.fav}
 			>
 				<i className="far fa-heart"></i>
 			</a>
@@ -26,4 +26,5 @@ export const Card = (props) => {
 Card.propTypes = {
 	name: PropTypes.string,
 	clave: PropTypes.string,
+	fav: PropTypes.func
 };

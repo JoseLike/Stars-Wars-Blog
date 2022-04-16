@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import "../../styles/home.css";
 import { Context } from "../store/appContext";
@@ -24,7 +24,7 @@ export const Home = () => {
       <div className="row ms-10 d-flex flex-nowrap justify-content-start overflow-auto">
         {store.characters.map((character) => {
           return (
-            <Card key={character.uid} name={character.name} clave={"/single/" + character.uid} loadsingle={character.uid} />
+            <Card key={character.uid} name={character.name} clave={"/single/" + character.uid} />
           );
         })}
       </div>
