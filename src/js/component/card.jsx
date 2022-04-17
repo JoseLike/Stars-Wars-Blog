@@ -10,12 +10,12 @@ export const Card = (props) => {
 		<div className="card-body">
 			<h5 className="card-title mb-4">{props.name}</h5>
 			<Link to={props.clave}>
-				<a className="btn btn-outline-primary"> 
+				<div className="btn btn-outline-primary"> 
 					Learn more!
-				</a>
+				</div>
 			</Link>
 			<a
-				className="btn-outline-warning float-end m- border border-warning ps-1 rounded pe-1" onClick={props.fav}
+				className="btn-outline-warning float-end m- border border-warning ps-1 rounded pe-1"
 			>
 				<i className="far fa-heart"></i>
 			</a>
