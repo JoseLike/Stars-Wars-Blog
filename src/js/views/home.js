@@ -34,7 +34,7 @@ export const Home = () => {
       <div className="row ms-10 d-flex flex-nowrap justify-content-start overflow-auto">
         {store.planets.map((planet) => {
           return (
-            <Card key={planet.uid} name={planet.name} clave={"/single/" + planet.uid} />
+            <Card key={planet.uid} name={planet.name} clave={"/planet/" + planet.uid} />
           );
         })}
       </div>
@@ -44,7 +44,7 @@ export const Home = () => {
       <div className="row ms-10 d-flex flex-nowrap justify-content-start overflow-auto">
         {store.vehicles.map((vehicle) => {
           return (
-            <Card key={vehicle.uid} name={vehicle.name} clave={"/single/" + vehicle.uid} />
+            <Card key={vehicle.uid} name={vehicle.name} clave={"/starship/" + vehicle.uid} />
           );
         })}
       </div>

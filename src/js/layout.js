@@ -4,6 +4,8 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
 import { Single } from "./views/single";
+import { Planet } from "/workspace/Stars-Wars-Blog/src/js/views/planet.js";
+import { Starship } from "/workspace/Stars-Wars-Blog/src/js/views/starship.js";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -26,6 +28,12 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/single/:theid">
 							<Single />
+						</Route>
+						<Route exact path="/planet/:theid">
+							<Planet />
+						</Route>
+						<Route exact path="/starship/:theid">
+							<Starship />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

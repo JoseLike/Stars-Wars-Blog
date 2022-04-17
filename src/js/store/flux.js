@@ -52,6 +52,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				"url": "https://www.swapi.tech/api/people/10"
 			  }],
 			onecharacter:[],
+			oneplanet:[],
+			onestarship:[],
 			planets:[],
 			vehicles:[],
 			favourites:[]
@@ -85,6 +87,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const response = await fetch("https://www.swapi.tech/api/people/"+key)
 				const gettedcharacter = await response.json(); 
 				setStore({onecharacter:gettedcharacter.result.properties})
+			},
+			getOnePlanet: async (key)=>{
+				const response = await fetch("https://www.swapi.tech/api/planets/"+key)
+				const gettedplanet = await response.json(); 
+				setStore({oneplanet:gettedplanet.result.properties})
+			},
+			getOneStarship: async (key)=>{
+				const response = await fetch("https://www.swapi.tech/api/starships/"+key)
+				const gettedstarship = await response.json(); 
+				setStore({onestarship:gettedstarship.result.properties})
 			}
 			
 		}

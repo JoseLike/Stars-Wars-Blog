@@ -3,16 +3,10 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Single = () => {
+export const Starship = () => {
   const { store, actions } = useContext(Context);
   const { theid } = useParams();
 
-   useEffect(() => {
-   actions.getOneCharacter(theid);
-  }, []);
-  useEffect(() => {
-    actions.getOnePlanet(theid);
-   }, []);
    useEffect(() => {
     actions.getOneStarship(theid);
    }, []);
@@ -20,7 +14,7 @@ export const Single = () => {
   return (
     <div className="container">
       <div className="row">
-		  <h1>{store.onecharacter.name}</h1>
+		  <h1>{store.onestarship.model}</h1>
         <img className="foto" />
         <p></p>
       </div>
@@ -39,13 +33,13 @@ export const Single = () => {
           </thead>
           <tbody>
             <tr>
-              <th scope="row">{store.onecharacter.height}</th>
-              <td>{store.onecharacter.mass}</td>
-              <td>{store.onecharacter.hair_color}</td>
-              <td>{store.onecharacter.skin_color}</td>
-			  <td>{store.onecharacter.eye_color}</td>
-			  <td>{store.onecharacter.birth_year}</td>
-			  <td>{store.onecharacter.gender}</td>
+              <th scope="row">{store.onestarship.starship_class}</th>
+              <td>{store.onestarship.manufacturer}</td>
+              <td>{store.onestarship.cost_in_credits}</td>
+              <td>{store.onestarship.length}</td>
+			  <td>{store.onestarship.crew}</td>
+			  <td>{store.onestarship.passengers}</td>
+			  <td>{store.onestarship.max_atmosphering_speed}</td>
             </tr>
           </tbody>
         </table>
