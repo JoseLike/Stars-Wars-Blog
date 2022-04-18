@@ -60,8 +60,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 
-			addToFavs:()=>{
-				setStore({favourites: []})
+			addToFavs:(name)=>{
+				setStore({favourites: name})
 			},
 
 			getCharacters: async ()=>{
