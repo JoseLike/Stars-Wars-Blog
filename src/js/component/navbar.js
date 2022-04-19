@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
+import { StaticRouter } from "react-router-dom";
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
@@ -22,7 +23,9 @@ export const Navbar = () => {
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          Dropdown button
+          Favourites 
+            {store.favourites.length}
+
         </button>
         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
           {store.favourites.map((items, index) => {

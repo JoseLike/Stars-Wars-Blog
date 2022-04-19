@@ -13,9 +13,8 @@ export const Single = () => {
   useEffect(() => {
     actions.getOnePlanet(theid);
   }, []);
-  useEffect(() => {
-    actions.getOneStarship(theid);
-  }, []);
+
+
 
   return (
     <div className="container">

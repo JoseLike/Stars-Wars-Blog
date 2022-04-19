@@ -62,15 +62,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			addToFavs:(name)=>{
 				const store = getStore();
-				const addfav = store.favourites.concat(name)
-				setStore({favourites: addfav})
-			},
+				if(!store.favourites.includes(name)){
+				setStore({favourites: [...store.favourites, name]  })
+			}else{
+				setStore({favourites: store.favourites.filter((item)=> item!=name ) })
+			}
+		},
 
-			deleteFromFavs:(name)=>{
-				const store = getStore();
-				const addfav = store.favourites.concat(name)
-				setStore({favourites: addfav})
-			},
 
 			getCharacters: async ()=>{
 				const response = await  fetch( "https://www.swapi.tech/api/people")
@@ -105,6 +103,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const response = await fetch("https://www.swapi.tech/api/starships/"+key)
 				const gettedstarship = await response.json(); 
 				setStore({onestarship:gettedstarship.result.properties})
+			},
+
+			getImages: async (id)=>{
+				const response= await fetch("https://starwars-visualguide.com/assets/img/characters")
+				const gettedimages = await response.json();
+				setS
 			}
 			
 		}
