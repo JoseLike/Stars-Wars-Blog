@@ -23,8 +23,7 @@ export const Navbar = () => {
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          Favourites 
-            {store.favourites.length}
+          {store.favourites.length} - Favourites 
 
         </button>
         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">

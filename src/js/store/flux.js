@@ -56,7 +56,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			onestarship:[],
 			planets:[],
 			vehicles:[],
-			favourites:[]
+			favourites:[],
+			images:[]
 		},
 		actions: {
 
@@ -105,14 +106,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({onestarship:gettedstarship.result.properties})
 			},
 
-			getImages: async (id)=>{
-				const response= await fetch("https://starwars-visualguide.com/assets/img/characters")
-				const gettedimages = await response.json();
-				setS
-			}
+			getMoreCharacters: async ()=>{
+				const store = getStore();
+				let counter =1;
+				const response = await fetch(("https://www.swapi.tech/api/vehicles?page="+(counter+1)+"&limit=10"));
+				const more = await response.json();
+				if(counter != more.total_pages){
+					setStore({onestarship:[...store.characters, more.results]})
+				}
+				}
 			
 		}
-	};
+	}
 };
 
 export default getState;
