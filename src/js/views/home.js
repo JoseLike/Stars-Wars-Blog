@@ -24,7 +24,7 @@ export const Home = () => {
       <div className="row ms-10 d-flex flex-nowrap justify-content-start overflow-auto">
         {store.characters.map((character) => {
           return (
-            <Card key={character.uid} name={character.name} clave={"/single/" + character.uid} />
+            <Card key={character.uid} name={character.name} clave={"/single/" + character.uid} fav = {()=>{actions.addToFavs(character.name)}} />
           );
         })}
       </div>

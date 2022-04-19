@@ -61,7 +61,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 		actions: {
 
 			addToFavs:(name)=>{
-				setStore({favourites: name})
+				const store = getStore();
+				const addfav = store.favourites.concat(name)
+				setStore({favourites: addfav})
+			},
+
+			deleteFromFavs:(name)=>{
+				const store = getStore();
+				const addfav = store.favourites.concat(name)
+				setStore({favourites: addfav})
 			},
 
 			getCharacters: async ()=>{

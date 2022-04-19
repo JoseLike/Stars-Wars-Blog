@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
-	const { store, actions } = useContext(Context);
+  const { store, actions } = useContext(Context);
   return (
     <nav className="navbar navbar-light bg-light">
       <a className="navbar-brand ps-5" href="#">
@@ -25,15 +25,18 @@ export const Navbar = () => {
           Dropdown button
         </button>
         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-			{store.favourites.map((items,index)=>{
-				return(
-					<li key={index}>
-            <a  className="dropdown-item" href="#">
-              {items}
-            </a>
-          </li>
-				)
-			})}
+          {store.favourites.map((items, index) => {
+            return (
+              <li key={index}>
+                <div className="d-flex container">
+                  <a className="dropdown-item" href="#">
+                    {items}
+                  </a>
+                  <button>X</button>
+                </div>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </nav>
