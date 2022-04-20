@@ -52,7 +52,7 @@ export const Home = () => {
                 clave={"/planet/" + planet.uid}
               />
             );
-          })}<button  style={{ width: "18rem" }}  type="button" className="btn btn-secondary">
+          })}<button  style={{ width: "18rem" }}  type="button" className="btn btn-secondary" onClick={actions.getMorePlanets}>
           Load more planets
         </button>
         </div>
@@ -68,7 +68,7 @@ export const Home = () => {
                 clave={"/starship/" + vehicle.uid}
               />
             );
-          })}<button  style={{ width: "18rem" }}  type="button" className="btn btn-secondary">
+          })}<button  style={{ width: "18rem" }}  type="button" className="btn btn-secondary" onClick={actions.getMoreVehicles} >
           Load more vehicles
         </button>
         </div>
