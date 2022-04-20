@@ -57,7 +57,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			planets:[],
 			vehicles:[],
 			favourites:[],
-			images:[]
+			images:[],
+			charactersPages : 1,
+			characterpage: 1
 		},
 		actions: {
 
@@ -108,11 +110,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			getMoreCharacters: async ()=>{
 				const store = getStore();
-				let counter =1;
-				const response = await fetch(("https://www.swapi.tech/api/vehicles?page="+(counter+1)+"&limit=10"));
+				const response = await fetch((`https://www.swapi.tech/api/people?page=${store.characterpage+1}&limit=10`));
 				const more = await response.json();
-				if(counter != more.total_pages){
-					setStore({onestarship:[...store.characters, more.results]})
+				setStore({charactersPages: more.total_pages })
+				if(store.characterpage != store.charactersPages){
+					setStore({characterpage: store.characterpage+1 })
+					setStore({characters:[...store.characters.concat(more.results)]})
 				}
 				}
 			
