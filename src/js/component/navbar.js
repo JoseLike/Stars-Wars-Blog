@@ -34,7 +34,7 @@ export const Navbar = () => {
                   <a className="dropdown-item" href="#">
                     {items}
                   </a>
-                  <button>X</button>
+                  <button onClick={()=>{actions.btn_delete(items)}}>X</button>
                 </div>
               </li>
             );

@@ -18,6 +18,12 @@ export const Single = () => {
 
   return (
     <div className="container">
+      
+      <div className="d-flex row m-2">
+        <Link to={"/"}>
+          <div className="align-items-middle"><i class="fa-solid fa-circle-arrow-left fa-2x me-2"></i>Back</div>
+        </Link>
+      </div>
       <div className="row">
         <h1>{store.onecharacter.name}</h1>
       </div>

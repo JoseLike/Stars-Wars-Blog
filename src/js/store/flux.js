@@ -79,6 +79,13 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
+      btn_delete: (name)=>{
+        const store = getStore();
+        setStore({
+          favourites: store.favourites.filter((item) => item != name),
+        });
+      },
+
       getCharacters: async () => {
         const response = await fetch("https://www.swapi.tech/api/people");
         const data = await response.json();
