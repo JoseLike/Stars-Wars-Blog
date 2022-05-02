@@ -6,6 +6,7 @@ import { Home } from "./views/home";
 import { Single } from "./views/single";
 import { Planet } from "/workspace/Stars-Wars-Blog/src/js/views/planet.js";
 import { Starship } from "/workspace/Stars-Wars-Blog/src/js/views/starship.js";
+import { CreateUser} from "/workspace/Stars-Wars-Blog/src/js/views/create-user.js";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -34,6 +35,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/starship/:theid">
 							<Starship />
+						</Route>
+						<Route exact path="/create-user">
+							<CreateUser />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

@@ -15,16 +15,29 @@ export const Navbar = () => {
           alt=""
         />
       </a>
-      <div className="dropdown me-5">
+      <div className="d-grid gap-2 d-md-block me-5">
         <button
-          className="btn btn-secondary dropdown-toggle"
+          className="btn btn-link create-user"
+          type="button"
+          id="NavButtonCreateUser"
+        >
+          Create User
+        </button>
+        <button
+          className="btn btn-success login-user"
+          type="button"
+          id="NavButtonLogin"
+        >
+          Login
+        </button>
+        <button
+          className="btn btn-secondary dropdown-toggle ms-2"
           type="button"
           id="dropdownMenuButton1"
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          {store.favourites.length} - Favourites 
-
+          {store.favourites.length} - Favourites
         </button>
         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
           {store.favourites.map((items, index) => {
@@ -34,7 +47,13 @@ export const Navbar = () => {
                   <a className="dropdown-item" href="#">
                     {items}
                   </a>
-                  <button onClick={()=>{actions.btn_delete(items)}}>X</button>
+                  <button
+                    onClick={() => {
+                      actions.btn_delete(items);
+                    }}
+                  >
+                    X
+                  </button>
                 </div>
               </li>
             );
