@@ -7,22 +7,26 @@ export const Navbar = () => {
   const { store, actions } = useContext(Context);
   return (
     <nav className="navbar navbar-light bg-light">
-      <a className="navbar-brand ps-5" href="#">
-        <img
-          src="https://1000marcas.net/wp-content/uploads/2019/12/Star-Wars-Logo-5.png"
-          width="65"
-          height="45"
-          alt=""
-        />
-      </a>
+      <Link to={"./"}>
+        <a className="navbar-brand ps-5" href="#">
+          <img
+            src="https://1000marcas.net/wp-content/uploads/2019/12/Star-Wars-Logo-5.png"
+            width="65"
+            height="45"
+            alt=""
+          />
+        </a>
+      </Link>
       <div className="d-grid gap-2 d-md-block me-5">
-        <button
-          className="btn btn-link create-user"
-          type="button"
-          id="NavButtonCreateUser"
-        >
-          Create User
-        </button>
+        <Link to={"/create-user"}>
+          <button
+            className="btn btn-link create-user"
+            type="button"
+            id="NavButtonCreateUser"
+          >
+            Create User
+          </button>
+        </Link>
         <button
           className="btn btn-success login-user"
           type="button"

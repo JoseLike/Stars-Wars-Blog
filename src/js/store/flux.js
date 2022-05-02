@@ -66,8 +66,21 @@ const getState = ({ getStore, getActions, setStore }) => {
       planetpage: 1,
       vehiclesPages: 1,
       vehiclepage: 1,
+      new_user:[],
+      user:[]
     },
     actions: {
+      create_new_user : async() =>{
+        const respone = await fetch();
+        const data = await respone.json()
+        setStore({user : data})
+      },
+
+      handleNewUser : (datos)=>{
+        const store = getStore();
+        setStore({new_user: datos})
+      },
+
       addToFavs: (name) => {
         const store = getStore();
         if (!store.favourites.includes(name)) {
