@@ -71,9 +71,11 @@ const getState = ({ getStore, getActions, setStore }) => {
     },
     actions: {
       create_new_user : async() =>{
-        const respone = await fetch();
-        const data = await respone.json()
-        setStore({user : data})
+        const response = await fetch("https://3000-joselike-starswarsapi-33u7clvy5vx.ws-eu43.gitpod.io/api/Users",{
+          method : "POST",
+          headers : { "Content-Type" : "application/json" },
+          body : JSON.stringify(new_user)
+        })
       },
 
       handleNewUser : (datos)=>{

@@ -24,6 +24,7 @@ export const CreateUser = () => {
 
   const sendNewUser=()=>{
     actions.handleNewUser(datos);
+    actions.create_new_user()
   }
 
   return (
